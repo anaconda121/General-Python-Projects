@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	  <title>Todo App</title>
+	</head>
+
+	<body>
+		{% for task in tasks %}
+			<div>
+				<p>{{task}} </p>
+			</div>
+		{% endfor %}
+
+		<form method = "POST" action = "/">
+			{% csrf_token %}
+			{{form.title}}
+			<input type = "submit" name = "Create Task">
+		</form>
+	</body>
+
+</html>
